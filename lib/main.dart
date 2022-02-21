@@ -1,53 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
+import 'package:alogin/pages/splash_screen.dart';
 
-void main() {
-  runApp(const MyApp());
+void main(){
+  runApp(LoginUiApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class LoginUiApp extends StatelessWidget {
 
-  // This widget is the root of your application.
+  Color _primaryColor = HexColor('#DC54FE');
+  Color _accentColor = HexColor('#8A02AE');
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Login',
-      theme: ThemeData(
-
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Login Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-
-          ],
-        ),
-      ),
-      // This trailing comma makes auto-formatting nicer for build methods.
+           title: 'Flutter Login UI',
+           theme: ThemeData(
+             primaryColor: _primaryColor,
+             accentColor: _accentColor,
+             scaffoldBackgroundColor: Colors.grey.shade100,
+             primarySwatch: Colors.grey,
+           ),
+            home: SplashScreen(),
     );
   }
 }
