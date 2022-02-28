@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - native_spashscreen
 #      Build and release
 name: "Build & Release"
 jobs:
